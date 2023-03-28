@@ -1,0 +1,5 @@
+Supondo que uma empresa tenha a necessidade de uma aplicação que possibilite o registro de compras realizadas por ela, crie um modelo de formulário que representará essa aplicação. O formulário precisa contemplar:
+
+- Dados relacionados ao fornecedor do produto, como nome e CNPJ.
+- Dados do processo de registro, formulário com datas de emissão da nota pelo fornecedor e a data em que o produto tem entrada registrada na empresa, além do número da nota fiscal.
+- Para os produtos adquiridos é preciso informar a descrição, o preço de custo e a quantidade comprada para cada um, além do código que identifica.
