@@ -7,7 +7,7 @@ using ModelProject;
 
 namespace PersistenceProject
 {
-    class Repository
+    public class Repository
     {
         private IList<Fornecedor> fornecedores
             = new List<Fornecedor>();

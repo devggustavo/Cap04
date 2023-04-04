@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FornecedorCotroller.cs" />
+    <Compile Include="NotaEntradaController.cs" />
+    <Compile Include="ProdutoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +51,9 @@
       <Project>{a827cff2-7d10-4ffe-9779-60c1f8c03983}</Project>
       <Name>ModelProject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ViewProject\ViewProject.csproj">
-      <Project>{6568fc7d-1c90-4a3b-be90-0c611d1889dd}</Project>
-      <Name>ViewProject</Name>
+    <ProjectReference Include="..\PersistenceProject\PersistenceProject.csproj">
+      <Project>{33ba5d7f-808d-4f6a-a8f3-d0c8c14bdeba}</Project>
+      <Name>PersistenceProject</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
