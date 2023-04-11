@@ -27,21 +27,23 @@ namespace ViewProject
             var fornecedor = this.controller.Insert(
                 new Fornecedor()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = (txtId.Text == string.Empty ?
+                        Guid.NewGuid() : new Guid(txtId.Text)),
                     Nome = txtNome.Text,
                     CNPJ = txtCnpj.Text
                 });
 
-            txtId.Text = fornecedor.Id.ToString();
+            fornecedor = (txtId.Text == string.Empty ?
+                    this.controller.Insert(fornecedor) :
+                    this.controller.Update(fornecedor));
             dgvFornecedor.DataSource = null;
             dgvFornecedor.DataSource = this.controller.GetAll();
+            ClearControls();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            txtId.Text = string.Empty;
-            txtNome.Text = string.Empty;
-            txtCnpj.Text = string.Empty;
+            ClearControls();
         }
 
         private void dgvFornecedor_SelectionChanged(object sender, EventArgs e)
