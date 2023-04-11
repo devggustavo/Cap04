@@ -29,7 +29,7 @@ namespace ModelProject
         public override int GetHashCode()
         {
             // TO DO: Voltar aqui depois
-            return 0;
+            return this.GetHashCode();
         }
     }
 }

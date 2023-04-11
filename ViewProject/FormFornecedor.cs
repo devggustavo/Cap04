@@ -24,14 +24,13 @@ namespace ViewProject
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            var fornecedor = this.controller.Insert(
-                new Fornecedor()
-                {
-                    Id = (txtId.Text == string.Empty ?
-                        Guid.NewGuid() : new Guid(txtId.Text)),
-                    Nome = txtNome.Text,
-                    CNPJ = txtCnpj.Text
-                });
+            var fornecedor = new Fornecedor()
+            {
+                Id = (txtId.Text == string.Empty ?
+                    Guid.NewGuid() : new Guid(txtId.Text)),
+                Nome = txtNome.Text,
+                CNPJ = txtCnpj.Text
+            };
 
             fornecedor = (txtId.Text == string.Empty ?
                     this.controller.Insert(fornecedor) :
@@ -48,12 +47,15 @@ namespace ViewProject
 
         private void dgvFornecedor_SelectionChanged(object sender, EventArgs e)
         {
+            dgvFornecedor.ClearSelection();
+            
             txtId.Text = dgvFornecedor.CurrentRow.Cells[0].
                 Value.ToString();
             txtNome.Text = dgvFornecedor.CurrentRow.Cells[1].
                 Value.ToString();
             txtCnpj.Text = dgvFornecedor.CurrentRow.Cells[2].
                 Value.ToString();
+            
         }
 
         private void ClearControls()
@@ -63,6 +65,27 @@ namespace ViewProject
             txtNome.Text = string.Empty;
             txtCnpj.Text = string.Empty;
             txtNome.Focus();
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == string.Empty)
+                MessageBox.Show(
+                    "Selecione o FORNECEDOR a ser removido " +
+                    "do GRID");
+            else
+            {
+                this.controller.Remove(
+                    new Fornecedor()
+                    {
+                        Id = new Guid(txtId.Text)
+                    });
+
+                dgvFornecedor.DataSource = null;
+                dgvFornecedor.DataSource =
+                    this.controller.GetAll();
+                ClearControls();
+            }
         }
     }
 }
