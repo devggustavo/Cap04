@@ -52,10 +52,34 @@
     <Compile Include="FormFornecedor.Designer.cs">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="formJanelaprincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formJanelaprincipal.Designer.cs">
+      <DependentUpon>formJanelaprincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNotaEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotaEntrada.Designer.cs">
+      <DependentUpon>FormNotaEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduto.Designer.cs">
+      <DependentUpon>FormProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormFornecedor.resx">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formJanelaprincipal.resx">
+      <DependentUpon>formJanelaprincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotaEntrada.resx">
+      <DependentUpon>FormNotaEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +111,10 @@
     <ProjectReference Include="..\ModelProject\ModelProject.csproj">
       <Project>{a827cff2-7d10-4ffe-9779-60c1f8c03983}</Project>
       <Name>ModelProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersistenceProject\PersistenceProject.csproj">
+      <Project>{33ba5d7f-808d-4f6a-a8f3-d0c8c14bdeba}</Project>
+      <Name>PersistenceProject</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

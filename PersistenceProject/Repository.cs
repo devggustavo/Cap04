@@ -93,5 +93,14 @@ namespace PersistenceProject
                 IndexOf(notaEntrada)] = notaEntrada;
             return notaEntrada;
         }
+
+        public NotaEntrada GetNotaEntradaById(Guid Id)
+        {
+            var notaEntrada = this.notasEntrada[
+            this.notasEntrada.IndexOf(
+            new NotaEntrada() { Id = Id }
+            )];
+            return notaEntrada;
+        }
     }
 }

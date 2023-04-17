@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ModelProject;
 using PersistenceProject;
+using ControllerProject;
 
 namespace ControllerProject
 {
@@ -20,6 +21,7 @@ namespace ControllerProject
 
         public void Remove(NotaEntrada notaEntrada)
         {
+            notaEntrada.RemoverTodosProdutos();
             this.repository.RemoveNotaEntrada(notaEntrada);
         }
 
@@ -33,5 +35,12 @@ namespace ControllerProject
             return this.repository.
                 UpdateNotaEntrada(notaEntrada);
         }
+
+        public NotaEntrada GetNotaEntradaById(Guid Id)
+        {
+            return this.repository.GetNotaEntradaById(Id);
+        }
+
+        
     }
 }

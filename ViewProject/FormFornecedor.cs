@@ -14,12 +14,12 @@ namespace ViewProject
 {
     public partial class FormFornecedor : Form
     {
-        private FornecedorCotroller controller =
-            new FornecedorCotroller();
-
-        public FormFornecedor()
+        private FornecedorCotroller controller;
+        public FormFornecedor(
+        FornecedorCotroller controller)
         {
             InitializeComponent();
+            this.controller = controller;
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace ViewProject
                     this.controller.GetAll();
                 ClearControls();
             }
+        }
+
+        private void FormFornecedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
